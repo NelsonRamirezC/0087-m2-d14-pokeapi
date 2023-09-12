@@ -2,3 +2,12 @@
 
 
 /* FIN ESTILOS NAVBAR */
+
+
+/* INICIO ESTILO CARD DETALLE POKEMON */
+
+#cardPokemon img {
+    max-height: 230px;
+}
+
+/* FIN ESTILO CARD DETALLE POKEMON */
