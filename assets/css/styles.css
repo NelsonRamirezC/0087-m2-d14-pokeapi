@@ -23,3 +23,16 @@
 
 /* FIN ESTILOS TABLA MIS POKEMONES */
 
+
+
+/* INICIO ESTILOS FOOTER */
+footer i {
+    font-size: 35px;
+    color: white;
+}
+footer p {
+    font-size: 25px;
+    color: white;
+    font-weight: 800;
+}
+/* FIN ESTILOS FOOTER */
