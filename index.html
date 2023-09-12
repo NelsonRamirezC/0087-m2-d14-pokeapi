@@ -52,10 +52,21 @@
       </header>
 
     <!-- FIN HEADER -->
-    <main>
+    <main class="container">
         <!-- INICIO SECCIÓN FORMULARIO CONSULTA POKÉMONES -->
         <section id="buscaPokemon" class="py-5">
             <h2 class="text-center">Consulta pokémones</h2>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-xl-4">
+                    <form id="formFindPokemon">
+                        <label for="findPokemon" class="form-label">ID / Nombre Pokémon:</label>
+                        <input type="text" name="findPokemon" id="findPokemon" class="form-control my-3" required>
+                       <div class="d-flex justify-content-center">
+                            <input type="submit" value="Busca un Pokémon" class="btn btn-success">
+                       </div>
+                    </form>
+                </div>
+            </div>
 
         </section>
 
