@@ -1,5 +1,12 @@
 $(()=> {
 
+    //contiene el pokemon que se está mostrando
+    let currentPokemon;
+
+    //va a contener todos los pokémones que registremos
+    let arrayPokemones = [];
+
+
     /* CAPTURAR EL FORMULARIO */
     const formFindPokemon = $("#formFindPokemon");
     
@@ -33,11 +40,16 @@ $(()=> {
             //console.log(habilidades);
 
             let pokemon = {
+                id: data.id,
                 nombre: data.name,
                 imagen: data.sprites.other.dream_world.front_default,
                 habilidades: habilidades //array que contiene nombre de habilidades
             }
             console.log(pokemon);
+
+            //dejamos como currentPokemon al actual pokémon
+            currentPokemon = pokemon;
+
             cargarDatosPokemonCard(pokemon);
         })
         .catch(function(error){
@@ -67,9 +79,32 @@ $(()=> {
 
         //LE AGREGAMOS LOS ELEMENTOS DE LISTA A LA UL (LISTA)
         $("#listaHabilidades").html(liHabilidades);
-
-
     }
 
+
+    /* INICIO EVENTO CLIC BOTÓN REGISTRAR POKÉMON */
+
+    $("#btnRegistrarPokemon").on("click", function(){
+        //se valida que currentPokemon tenga datos de un pokémon.
+        if(currentPokemon){
+            arrayPokemones.push(currentPokemon);
+            console.log(arrayPokemones);
+
+            let filaMisPokemones = "";
+            arrayPokemones.forEach(function(pokemon){
+                filaMisPokemones += `
+                <tr>
+                    <th scope="row">${pokemon.id}</th>
+                    <td>${pokemon.nombre}</td>
+                    <td><img src="${pokemon.imagen}" alt="${pokemon.nombre}"></img></td>
+                </tr>
+                `
+            });
+
+            $("#cuerpoTabla").html(filaMisPokemones);
+        }
+    })
+
+    /* FIN EVENTO CLIC BOTÓN REGISTRAR POKÉMON */
 
 })

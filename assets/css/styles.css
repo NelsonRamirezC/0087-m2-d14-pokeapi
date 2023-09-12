@@ -11,3 +11,15 @@
 }
 
 /* FIN ESTILO CARD DETALLE POKEMON */
+
+
+
+/* INICIO ESTILOS TABLA MIS POKEMONES */
+
+#cuerpoTabla img {
+    width: 100px;
+    height: auto;
+}
+
+/* FIN ESTILOS TABLA MIS POKEMONES */
+
